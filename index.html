@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio | Muhamad Alpin Akbar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      line-height: 1.6;
+      padding: 20px;
+      scroll-behavior: smooth;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+      animation: fadeIn 1.5s ease;
+    }
+    h1, h2, h3 {
+      color: #ffd700;
+    }
+    .subtitle {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-top: -10px;
+      margin-bottom: 20px;
+    }
+    .section {
+      margin-bottom: 30px;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+    a {
+      color: #00d4ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .info {
+      margin-bottom: 10px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Muhamad Alpin Akbar</h1>
+    <p class="subtitle">Junior Developer</p>
+    <p class="info">📍 Serang, Banten</p>
+    <p class="info">📞 +62 859-2011-7802</p>
+    <p class="info">📧 malpinakbar214@gmail.com</p>
+    <p class="info">🌐 <a href="https://github.com/MuhammadAlpinAkbar210" target="_blank">GitHub</a></p>
+
+    <div class="section" style="--delay: 0s">
+      <h2>Profil Singkat</h2>
+      <p>Saya adalah pelajar SMK dari Serang, Banten yang memiliki minat besar di bidang teknologi informasi, khususnya pengembangan web dan sistem informasi. Berpengalaman mengerjakan proyek berbasis PHP dan MySQL, saya terbiasa membuat aplikasi sederhana namun fungsional, serta mampu bekerja dengan pendekatan yang efisien dan mudah dipahami.</p>
+    </div>
+
+    <div class="section" style="--delay: 0.2s">
+      <h2>Pendidikan</h2>
+      <ul>
+        <li>SMK Informatika (2022 – 2025)</li>
+        <li>MTs Al Aziziyah (2019 – 2022)</li>
+      </ul>
+    </div>
+
+    <div class="section" style="--delay: 0.4s">
+      <h2>Pengalaman Magang</h2>
+      <p><strong>PT Intras Jakarta</strong><br>Juni – Juli 2024 – Junior Web Developer / IT Support<br>
+      Membantu dalam pengembangan dan pengujian sistem informasi internal menggunakan PHP dan MySQL. Terlibat dalam input data, debugging, dan dokumentasi sederhana.</p>
+    </div>
+
+    <div class="section" style="--delay: 0.6s">
+      <h2>Keahlian</h2>
+      <ul>
+        <li>Pengembangan Web dengan PHP & MySQL</li>
+        <li>Desain antarmuka dengan HTML & CSS</li>
+        <li>Implementasi notifikasi menggunakan SweetAlert</li>
+        <li>Dasar JavaScript dan AJAX</li>
+        <li>Game Development dasar dengan Construct 2</li>
+        <li>Sistem CRUD dan laporan data</li>
+      </ul>
+    </div>
+
+    <div class="section" style="--delay: 0.8s">
+      <h2>Proyek yang Pernah Dibuat</h2>
+      <ul>
+        <li><strong>Sistem Manajemen Data Barang & Supplier</strong> – CRUD data barang dan supplier, login sistem, notifikasi SweetAlert</li>
+        <li><strong>Laporan Barang Masuk dan Keluar</strong> – Filter laporan berdasarkan tanggal dan kategori</li>
+        <li><strong>Game Edukasi (Construct 2)</strong> – Game interaktif edukatif untuk anak-anak</li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+          entry.target.style.transitionDelay = entry.target.style.getPropertyValue('--delay');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
